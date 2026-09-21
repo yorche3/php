@@ -9,6 +9,7 @@ Proyectos en **PHP**, con scripts simples ejecutados mediante el intérprete `ph
 | Módulo | Descripción |
 | ------ | ----------- |
 | [`core/foundations/`](core/foundations/) | **Fase 0 — Fundamentos**: `helloworld`, `hellouser`, `unit_test/calculator`, `numbers` |
+| [`core/algorithms/`](core/algorithms/) | **Fase 1 — Algoritmos Puros**: `naive_sort` |
 
 ---
 
@@ -32,6 +33,11 @@ composer test
 cd core/foundations/numbers
 composer install
 composer test
+
+# Naive Sort tests
+cd core/algorithms/naive_sort
+composer install
+composer test
 ```
 
 ---
@@ -42,7 +48,7 @@ composer test
 | ----------- | --- | ------------ |
 | [PHP](https://www.php.net/) 8.5 | Ejecutar scripts y código de librería | `php --version` |
 | [Composer](https://getcomposer.org/) 2.10 | Instalar la dependencia de desarrollo (PHPUnit) | `composer --version` |
-| [PHPUnit](https://phpunit.de/) 13.3 | Framework de pruebas de `calculator` y `numbers` | `composer test` |
+| [PHPUnit](https://phpunit.de/) 13.3 | Framework de pruebas de `calculator`, `numbers` y `naive_sort` | `composer test` |
 
 ```bash
 php --version
@@ -79,9 +85,9 @@ php <File>.php
 
 ### 2. Proyecto tipo librería con pruebas (Composer + PHPUnit)
 
-**ES:** Los proyectos `calculator` y `numbers` separan el código fuente en `src/` y las pruebas en `test/`. Cada proyecto declara PHPUnit en su propio `composer.json` (dependencia de desarrollo), publica el código y las suites mediante *classmap* y configura el runner con `phpunit.xml`. La ejecución se hace con `composer test` o con `vendor/bin/phpunit`.
+**ES:** Los proyectos `calculator`, `numbers` y `naive_sort` separan el código fuente en `src/` y las pruebas en `test/`. Cada proyecto declara PHPUnit en su propio `composer.json` (dependencia de desarrollo), publica el código y las suites mediante *classmap* y configura el runner con `phpunit.xml`. La ejecución se hace con `composer test` o con `vendor/bin/phpunit`.
 
-**EN:** The `calculator` and `numbers` projects separate source code into `src/` and tests into `test/`. Each project declares PHPUnit in its own `composer.json` (development dependency), publishes both code and suites through a *classmap*, and configures the runner with `phpunit.xml`. They are run with `composer test` or `vendor/bin/phpunit`.
+**EN:** The `calculator`, `numbers` and `naive_sort` projects separate source code into `src/` and tests into `test/`. Each project declares PHPUnit in its own `composer.json` (development dependency), publishes both code and suites through a *classmap*, and configures the runner with `phpunit.xml`. They are run with `composer test` or `vendor/bin/phpunit`.
 
 ```bash
 composer install
