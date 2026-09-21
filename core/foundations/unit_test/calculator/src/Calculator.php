@@ -14,10 +14,6 @@ final class Calculator
 
     public static function multiplication(int $a, int $b): int
     {
-        if ($b < 0) {
-            throw new InvalidArgumentException('The multiplier must be non-negative');
-        }
-
         $result = 0;
         for ($i = 1; $i <= $b; $i++) {
             $result = self::addition($result, $a);
@@ -28,10 +24,6 @@ final class Calculator
 
     public static function division(int $a, int $b): int
     {
-        if ($b <= 0) {
-            throw new InvalidArgumentException('The divisor must be positive');
-        }
-
         $dividend = $a;
         $quotient = 0;
         while ($dividend >= $b) {
@@ -44,10 +36,6 @@ final class Calculator
 
     public static function modulus(int $a, int $b): int
     {
-        if ($b <= 0) {
-            throw new InvalidArgumentException('The divisor must be positive');
-        }
-
         $quotient = self::division($a, $b);
         $product = self::multiplication($quotient, $b);
 
