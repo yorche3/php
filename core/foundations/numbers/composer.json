@@ -1,0 +1,25 @@
+{
+    "name": "yorche3/php-numbers",
+    "description": "Módulo numbers de la especificación 04_Numbers en PHP, con PHPUnit.",
+    "type": "library",
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^13.3"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "test/"
+        ]
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
