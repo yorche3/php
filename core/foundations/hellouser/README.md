@@ -79,7 +79,7 @@ php --version
 Salida verificada:
 
 ```text
-PHP 8.4.25 (cli) (built: Aug 25 2026 18:15:03) (NTS)
+PHP 8.5.10 (cli) (built: Aug 25 2026 21:09:32) (NTS)
 ```
 
 ### Ejecutar con entrada canalizada / Run with piped input

@@ -1,0 +1,25 @@
+{
+    "name": "yorche3/php-calculator",
+    "description": "Módulo calculator de la especificación 03_Unit_Test_Calculator en PHP, con PHPUnit.",
+    "type": "library",
+    "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "^13.3"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "test/"
+        ]
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

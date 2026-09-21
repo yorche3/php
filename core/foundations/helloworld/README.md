@@ -72,7 +72,7 @@ php --version
 Salida verificada:
 
 ```text
-PHP 8.4.25 (cli) (built: Aug 25 2026 18:15:03) (NTS)
+PHP 8.5.10 (cli) (built: Aug 25 2026 21:09:32) (NTS)
 ```
 
 ### Ejecutar con el intérprete / Run with the interpreter
@@ -100,9 +100,9 @@ No syntax errors detected in hello_world.php
 Hello, World! from PHP!
 ```
 
-La salida fue verificada ejecutando `php hello_world.php` con **PHP 8.4.25** en Linux/WSL2: el resultado es exactamente el mensaje del contrato seguido de un salto de línea, sin salida adicional.
+La salida fue verificada ejecutando `php hello_world.php` con **PHP 8.5.10** en Linux/WSL2: el resultado es exactamente el mensaje del contrato seguido de un salto de línea, sin salida adicional.
 
-The output was verified by running `php hello_world.php` with **PHP 8.4.25** on Linux/WSL2: the result is exactly the contract message followed by a newline, with no additional output.
+The output was verified by running `php hello_world.php` with **PHP 8.5.10** on Linux/WSL2: the result is exactly the contract message followed by a newline, with no additional output.
 
 ---
 
