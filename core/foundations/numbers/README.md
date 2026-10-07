@@ -208,7 +208,7 @@ composer test        # equivale a: vendor/bin/phpunit
 PHPUnit 13.3.4 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 8.5.10
-Configuration: /home/yorche3/programming_languages/php/core/foundations/numbers/phpunit.xml
+Configuration: ~/programming_languages/php/core/foundations/numbers/phpunit.xml
 
 ..........                                                        10 / 10 (100%)
 

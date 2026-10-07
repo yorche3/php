@@ -187,7 +187,7 @@ composer test        # equivale a: vendor/bin/phpunit
 PHPUnit 13.3.4 by Sebastian Bergmann and contributors.
 
 Runtime:       PHP 8.5.10
-Configuration: /home/yorche3/programming_languages/php/core/algorithms/naive_sort/phpunit.xml
+Configuration: ~/programming_languages/php/core/algorithms/naive_sort/phpunit.xml
 
 ...                                                                 3 / 3 (100%)
 
