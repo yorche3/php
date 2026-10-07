@@ -11,6 +11,7 @@ Los módulos de esta fase trabajan sobre **arrays de enteros**. En PHP los array
 | Módulo | Especificación | Enfoque | Tests | Estado |
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `composer test` (PHPUnit 13 + Composer) | 21 | ✅ |
+| [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `composer test` (PHPUnit 13 + Composer) | 15 | ✅ |
 
 ---
 
@@ -18,14 +19,23 @@ Los módulos de esta fase trabajan sobre **arrays de enteros**. En PHP los array
 
 ```text
 algorithms/
-└── naive_sort/                  # 05_Naive_Sort
+├── naive_sort/                  # 05_Naive_Sort
+│   ├── .gitignore               # Ignora vendor/, composer.lock y las cachés de PHPUnit
+│   ├── composer.json            # PHPUnit (dev) + autoload classmap + script test
+│   ├── phpunit.xml              # bootstrap + suite sobre test/
+│   ├── src/
+│   │   └── NaiveSort.php        # clase NaiveSort: 3 métodos
+│   ├── test/
+│   │   └── NaiveSortTest.php    # 3 tests × 7 casos
+│   └── README.md
+└── data_structures_basics/      # 06_Data_Structures_Basics
     ├── .gitignore               # Ignora vendor/, composer.lock y las cachés de PHPUnit
     ├── composer.json            # PHPUnit (dev) + autoload classmap + script test
     ├── phpunit.xml              # bootstrap + suite sobre test/
     ├── src/
-    │   └── NaiveSort.php        # clase NaiveSort: 3 métodos
+    │   └── DataStructuresBasics.php  # clase DataStructuresBasics
     ├── test/
-    │   └── NaiveSortTest.php    # 3 tests × 7 casos
+    │   └── DataStructuresBasicsTest.php  # 4 tests × 15 aserciones
     └── README.md
 ```
 
@@ -58,6 +68,11 @@ algorithms/
 ```bash
 # Naive Sort Tests
 cd naive_sort
+composer install
+composer test
+
+# Data Structures Basics Tests
+cd data_structures_basics
 composer install
 composer test
 ```
