@@ -15,8 +15,7 @@
 // `peek`, `dequeue`), `delete` devuelve booleano (éxito o fallo) y `size`
 // devuelve 0 mientras no hay nodos. `init` y `setNext` devuelven la instancia.
 //
-// Implementación pendiente: la escribe el autor. Esta delegación solo genera el
-// contrato y el esqueleto.
+// Implementación completa: todas las operaciones resueltas sobre el mismo `Node`.
 
 final class Node
 {
