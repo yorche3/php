@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 abstract class Node
 {
-    public function init(int $value): void
+    protected int $value = 0;
+
+    public function init(int $value): ?self
     {
         $this->value = $value;
+        return $this;
     }
 
     public function getValue(): int
@@ -20,11 +23,12 @@ final class TreeNode extends Node
     private ?TreeNode $left = null;
     private ?TreeNode $right = null;
 
-    public function init(int $value): void
+    public function init(int $value): ?self
     {
         parent::init($value);
         $this->left = null;
         $this->right = null;
+        return $this;
     }
 
     public function getLeft(): ?TreeNode
@@ -37,14 +41,16 @@ final class TreeNode extends Node
         return $this->right;
     }
 
-    public function setLeft(?TreeNode $node): void
+    public function setLeft(?TreeNode $node): ?self
     {
         $this->left = $node;
+        return $this;
     }
 
-    public function setRight(?TreeNode $node): void
+    public function setRight(?TreeNode $node): ?self
     {
         $this->right = $node;
+        return $this;
     }
 }
 
@@ -52,7 +58,7 @@ final class BinaryTree
 {
     private ?TreeNode $root = null;
     private int $count = 0;
-    
+
     public function init(): void
     {
         $this->root = null;
@@ -68,10 +74,10 @@ final class BinaryTree
             return true;
         }
         $current = $this->root;
-        while(true) {
+        while (true) {
             $v = $current->getValue();
             if ($value === $v) {
-                return false;
+                return true;
             }
             if ($value < $v) {
                 if ($current->getLeft() === null) {
@@ -128,18 +134,20 @@ final class GraphNode extends Node
     private array $neighbors = [];
     private ?GraphNode $nextVertex = null;
 
-    public function init(int $label): void
+    public function init(int $label): ?self
     {
         parent::init($label);
         $this->neighbors = [];
         $this->nextVertex = null;
+        return $this;
     }
 
+    /** @return array<int, GraphNode> */
     public function getNeighbors(): array
     {
         return $this->neighbors;
     }
-    
+
     public function getNextVertex(): ?GraphNode
     {
         return $this->nextVertex;
@@ -147,17 +155,20 @@ final class GraphNode extends Node
 
     public function addNeighbor(GraphNode $neighbor): bool
     {
-        if (in_array($neighbor, $this->neighbors, true)) {
-            return false;
+        foreach ($this->neighbors as $position => $current) {
+            $label = $current->getValue();
+            if ($label === $neighbor->getValue()) {
+                return false;
+            }
+            if ($label > $neighbor->getValue()) {
+                array_splice($this->neighbors, $position, 0, [$neighbor]);
+                return true;
+            }
         }
-        $pos = 0;
-        while ($pos < count($this->neighbors) && $this->neighbors[$pos]->getValue() < $neighbor->getValue()) {
-            $pos++;
-        }
-        array_splice($this->neighbors, $pos, 0, [$neighbor]);
+        $this->neighbors[] = $neighbor;
         return true;
     }
-    
+
     public function setNextVertex(?GraphNode $nextVertex): void
     {
         $this->nextVertex = $nextVertex;
@@ -169,7 +180,7 @@ final class Graph
     private ?GraphNode $vertices = null;
     private int $vertexCount = 0;
     private int $edgeCount = 0;
-    
+
     public function init(): void
     {
         $this->vertices = null;
@@ -192,7 +203,7 @@ final class Graph
     public function addVertex(int $label): bool
     {
         if ($this->findVertex($label) !== null) {
-            return false;
+            return true;
         }
         $newVertex = new GraphNode();
         $newVertex->init($label);
@@ -218,9 +229,8 @@ final class Graph
         }
         if ($vertexU->addNeighbor($vertexV)) {
             $this->edgeCount++;
-            return true;
         }
-        return false;
+        return true;
     }
 
     public function hasEdge(int $u, int $v): bool
@@ -244,7 +254,10 @@ final class Graph
         if ($vertexU === null) {
             return null;
         }
-        return $vertexU->getNeighbors();
+        return array_map(
+            static fn (GraphNode $neighbor): int => $neighbor->getValue(),
+            $vertexU->getNeighbors()
+        );
     }
 
     public function isEmpty(): bool
