@@ -12,6 +12,7 @@ Los módulos de esta fase trabajan sobre **arrays de enteros**. En PHP los array
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `composer test` (PHPUnit 13 + Composer) | 21 | ✅ |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `composer test` (PHPUnit 13 + Composer) | 15 | ✅ |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | `composer test` (PHPUnit 13 + Composer) | 23 | ✅ |
 
 ---
 
@@ -28,14 +29,23 @@ algorithms/
 │   ├── test/
 │   │   └── NaiveSortTest.php    # 3 tests × 7 casos
 │   └── README.md
-└── data_structures_basics/      # 06_Data_Structures_Basics
+├── data_structures_basics/      # 06_Data_Structures_Basics
+│   ├── .gitignore               # Ignora vendor/, composer.lock y las cachés de PHPUnit
+│   ├── composer.json            # PHPUnit (dev) + autoload classmap + script test
+│   ├── phpunit.xml              # bootstrap + suite sobre test/
+│   ├── src/
+│   │   └── DataStructuresBasics.php  # clase DataStructuresBasics
+│   ├── test/
+│   │   └── DataStructuresBasicsTest.php  # 4 tests × 15 aserciones
+│   └── README.md
+└── data_structures_advanced/    # 07_Data_Structures_Advanced
     ├── .gitignore               # Ignora vendor/, composer.lock y las cachés de PHPUnit
     ├── composer.json            # PHPUnit (dev) + autoload classmap + script test
     ├── phpunit.xml              # bootstrap + suite sobre test/
     ├── src/
-    │   └── DataStructuresBasics.php  # clase DataStructuresBasics
+    │   └── DataStructuresAdvanced.php  # Node, TreeNode, BinaryTree, GraphNode, Graph
     ├── test/
-    │   └── DataStructuresBasicsTest.php  # 4 tests × 15 aserciones
+    │   └── DataStructuresAdvancedTest.php  # 3 tests × 23 casos (23 aserciones)
     └── README.md
 ```
 
@@ -73,6 +83,11 @@ composer test
 
 # Data Structures Basics Tests
 cd data_structures_basics
+composer install
+composer test
+
+# Data Structures Advanced Tests
+cd data_structures_advanced
 composer install
 composer test
 ```

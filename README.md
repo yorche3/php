@@ -9,7 +9,7 @@ Proyectos en **PHP**, con scripts simples ejecutados mediante el intérprete `ph
 | Módulo | Descripción |
 | ------ | ----------- |
 | [`core/foundations/`](core/foundations/) | **Fase 0 — Fundamentos**: `helloworld`, `hellouser`, `unit_test/calculator`, `numbers` |
-| [`core/algorithms/`](core/algorithms/) | **Fase 1 — Algoritmos Puros**: `naive_sort`, `data_structures_basics` |
+| [`core/algorithms/`](core/algorithms/) | **Fase 1 — Algoritmos Puros**: `naive_sort`, `data_structures_basics`, `data_structures_advanced` |
 
 ---
 
@@ -43,6 +43,11 @@ composer test
 cd core/algorithms/data_structures_basics
 composer install
 composer test
+
+# Data Structures Advanced tests
+cd core/algorithms/data_structures_advanced
+composer install
+composer test
 ```
 
 ---
@@ -53,7 +58,7 @@ composer test
 | ----------- | --- | ------------ |
 | [PHP](https://www.php.net/) 8.5 | Ejecutar scripts y código de librería | `php --version` |
 | [Composer](https://getcomposer.org/) 2.10 | Instalar la dependencia de desarrollo (PHPUnit) | `composer --version` |
-| [PHPUnit](https://phpunit.de/) 13.3 | Framework de pruebas de `calculator`, `numbers`, `naive_sort` y `data_structures_basics` | `composer test` |
+| [PHPUnit](https://phpunit.de/) 13.3 | Framework de pruebas de `calculator`, `numbers`, `naive_sort`, `data_structures_basics` y `data_structures_advanced` | `composer test` |
 
 ```bash
 php --version
@@ -90,9 +95,9 @@ php <File>.php
 
 ### 2. Proyecto tipo librería con pruebas (Composer + PHPUnit)
 
-**ES:** Los proyectos `calculator`, `numbers`, `naive_sort` y `data_structures_basics` separan el código fuente en `src/` y las pruebas en `test/`. Cada proyecto declara PHPUnit en su propio `composer.json` (dependencia de desarrollo), publica el código y las suites mediante *classmap* y configura el runner con `phpunit.xml`. La ejecución se hace con `composer test` o con `vendor/bin/phpunit`.
+**ES:** Los proyectos `calculator`, `numbers`, `naive_sort`, `data_structures_basics` y `data_structures_advanced` separan el código fuente en `src/` y las pruebas en `test/`. Cada proyecto declara PHPUnit en su propio `composer.json` (dependencia de desarrollo), publica el código y las suites mediante *classmap* y configura el runner con `phpunit.xml`. La ejecución se hace con `composer test` o con `vendor/bin/phpunit`.
 
-**EN:** The `calculator`, `numbers`, `naive_sort` and `data_structures_basics` projects separate source code into `src/` and tests into `test/`. Each project declares PHPUnit in its own `composer.json` (development dependency), publishes both code and suites through a *classmap*, and configures the runner with `phpunit.xml`. They are run with `composer test` or `vendor/bin/phpunit`.
+**EN:** The `calculator`, `numbers`, `naive_sort`, `data_structures_basics` and `data_structures_advanced` projects separate source code into `src/` and tests into `test/`. Each project declares PHPUnit in its own `composer.json` (development dependency), publishes both code and suites through a *classmap*, and configures the runner with `phpunit.xml`. They are run with `composer test` or `vendor/bin/phpunit`.
 
 ```bash
 composer install
